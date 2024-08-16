@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #e0f7ff; /* Light sky blue background color */
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h2, h3, h5 {
+            text-align: left; /* Align text to the left */
+            margin: 0 0 20px 0; /* Margin for consistent spacing */
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        .slim {
+            font-weight: lighter;
+        }
+
+        .highlight {
+            color: #00aaff; /* Slightly darker sky blue */
+            font-weight: bold;
+        }
+
+        .line {
+            height: 1px;
+            background-color: #00aaff; /* Same color as the "GALLERY" text */
+            flex-grow: 1;
+            margin-left: 20px; /* Adjust spacing between text and line */
+        }
+
+        h3 {
+            font-size: 2em; /* Match font size of h2 */
+        }
+
+        .bold-blue {
+            color: #00aaff; /* Sky blue color */
+            font-weight: bold; /* Same font weight as highlight class */
+        }
+
+        h5 {
+            font-size: 1.6em; /* Smaller than h2 */
+            font-weight: lighter; /* Slim font style */
+            color: #333; /* Default color for h5 */
+            background-color: #e0f7ff; /* Match background color to page */
+            padding: 20px; /* Padding for spacing */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+
+        /* Swiper Container Styles */
+        .swiper-container {
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            background-color: #fff; /* White background color for the slider */
+            border-radius: 5px; /* Optional: Rounded corners */
+            padding: 10px; /* Optional: Padding around the slider */
+            overflow: hidden; /* Hide overflow */
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            transition-timing-function: linear; /* Smooth continuous sliding */
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto; /* Allow images to be inline */
+            flex-shrink: 0; /* Prevent shrinking */
+            overflow: hidden;
+            border-radius: 10px; /* Curved corners */
+        }
+
+        .swiper-slide img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: cover; /* Maintain aspect ratio and fit image within the slide */
+            border-radius: 10px; /* Curved corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for a collage effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h2><span class="slim">IMAGE</span> <span class="highlight">GALLERY</span></h2>
+        <div class="line"></div>
+    </div>
+    <h3>Wanna get the Feel of Our <span class="bold-blue">Happy Hours at Work</span>?</h3>
+    <h5>We take pride in Our Work & Joy in Our Play. Celebrations are Integral part of Our Culture.</h5>
+    
+    <!-- Swiper Slider -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Dynamic image content -->
+            <div class="swiper-slide">
+                <img src="images/1.jpg" alt="Image 1" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/2.jpg" alt="Image 2" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/3.jpg" alt="Image 3" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/4.jpg" alt="Image 4" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/5.jpg" alt="Image 5" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/6.jpg" alt="Image 6" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/7.jpg" alt="Image 7" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/8.jpg" alt="Image 8" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/9.jpg" alt="Image 9" />
+            </div>
+            <div class="swiper-slide">
+                <img src="images/10.jpg" alt="Image 10" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 5, // Show 5 slides at once
+            spaceBetween: 10,
+            loop: true,
+            speed: 5000, // Slow down the speed for a smooth transition
+            autoplay: {
+                delay: 0, // No delay between slides
+                disableOnInteraction: false, // Continue autoplay after user interaction
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 5,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                480: {
+                    slidesPerView: 2,
+                },
+                320: {
+                    slidesPerView: 1,
+                }
+            }
+        });
+    </script>
+</body>
+</html>
